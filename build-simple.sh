@@ -14,6 +14,9 @@ echo "Installing Node.js dependencies..."
 npm install
 
 echo "Running gulp production build tasks..."
+echo "Current working directory: $(pwd)"
+echo "Node version: $(node --version)"
+echo "NPM version: $(npm --version)"
 npx gulp prod
 
 # Create _site directory and copy everything needed
