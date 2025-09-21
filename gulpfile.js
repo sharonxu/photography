@@ -52,5 +52,8 @@ gulp.task('build', gulp.series('sass', 'minify-js'));
 // resize images
 gulp.task('resize', gulp.series('resize-images', 'delete'));
 
+// production build task (no image processing for CI/CD)
+gulp.task('prod', gulp.series('sass', 'minify-js'));
+
 // default task
 gulp.task('default', gulp.series('build', 'resize'));
