@@ -5,12 +5,17 @@ set -e
 
 echo "Starting build process..."
 
-# Install Bundler and Ruby dependencies
-echo "Installing Bundler..."
-gem install bundler
+# Check if bundler is available, install if not
+if ! command -v bundle &> /dev/null; then
+    echo "Bundler not found, installing..."
+    gem install bundler
+else
+    echo "Bundler found"
+fi
 
+# Install Ruby dependencies
 echo "Installing Ruby gems..."
-bundle install
+BUNDLE_WITHOUT="" bundle install
 
 # Install Node dependencies  
 echo "Installing Node.js dependencies..."
