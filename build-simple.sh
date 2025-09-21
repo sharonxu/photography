@@ -14,7 +14,7 @@ echo "Installing Node.js dependencies..."
 npm install
 
 echo "Running gulp production build tasks..."
-gulp prod
+npx gulp prod
 
 # Create _site directory and copy everything needed
 echo "Creating site structure..."

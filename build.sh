@@ -24,7 +24,7 @@ npm install
 
 # Run gulp build process (CSS, JS only - no image processing)
 echo "Running gulp production build tasks..."
-gulp prod
+npx gulp prod
 
 # Build Jekyll site
 echo "Building Jekyll site..."
