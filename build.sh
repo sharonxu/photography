@@ -5,13 +5,14 @@ set -e
 
 echo "Starting build process..."
 
-# Check if bundler is available, install if not
-if ! command -v bundle &> /dev/null; then
-    echo "Bundler not found, installing..."
-    gem install bundler
-else
-    echo "Bundler found"
-fi
+# Restore Gemfile for bundler
+echo "Setting up Ruby environment..."
+mv Gemfile.ruby Gemfile
+mv Gemfile.ruby.lock Gemfile.lock
+
+# Install bundler
+echo "Installing Bundler..."
+gem install bundler
 
 # Install Ruby dependencies
 echo "Installing Ruby gems..."
